@@ -64,17 +64,15 @@
       images.forEach((image) => {
         const slidein = (window.scrollY + window.innerHeight) - image.height / 2
         const imageBottom = image.offsetTop + image.height
-        console.log(window.scrollY)
 
-        const ishalfshown = slidein > image.offsetTop
-        const isnotscrolledpast = window.scrollY < imageBottom
-        //is the image half shown?
-        if (ishalfshown && isnotscrolledpast) {
+        const imgHalfShown = slidein > image.offsetTop
+        const isNotScrolledPast = window.scrollY < imageBottom
+
+        if (imgHalfShown && isNotScrolledPast) {
           image.classList.add("active")
         } else {
           image.classList.remove("active")
         }
-        //are we not scrolled past it?
       })
     }
 
